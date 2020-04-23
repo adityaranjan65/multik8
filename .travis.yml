@@ -6,13 +6,13 @@ before_install:
 script:
   - docker run -e CI=true aditya/react-test npm test
 after_success:
-  - docker build -t aditya/multi-client ./client
-  - docker build -t aditya/multi-nginx ./nginx
-  - docker build -t aditya/multi-server ./server
-  - docker build -t aditya/multi-worker ./worker
+  - docker build -t adityaranjan65/multi-client ./client
+  - docker build -t adityaranjan65/multi-nginx ./nginx
+  - docker build -t adityaranjan65/multi-server ./server
+  - docker build -t adityaranjan65/multi-worker ./worker
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push aditya/multi-client
-  - docker push aditya/multi-nginx
-  - docker push aditya/multi-server
-  - docker push aditya/multi-worker
+  - docker push adityaranjan65/multi-client
+  - docker push adityaranjan65/multi-nginx
+  - docker push adityaranjan65/multi-server
+  - docker push adityaranjan65/multi-worker
